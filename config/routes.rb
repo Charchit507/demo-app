@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     passwords: 'admin_users/passwords'
   }
 
+  root 'articles#index'
+
   resources :articles do
     resources :comments
   end
+
 end
