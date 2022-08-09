@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: MyDatabase
+  database: demo_app_development
   host: localhost
   pool: 5
   username: postgres
@@ -28,9 +28,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: MyDatabase_Production
+  database: demo_app_production
   host: localhost
   pool: 5
   username: postgres
   password: postgres
-  role: MyRole

@@ -1,9 +1,0 @@
-<h1>Hello and Welcome !</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
-<br>
-<% if admin_user_signed_in? %>
-  <%= link_to 'Sign out', destroy_admin_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign in', new_admin_user_session_path %>
-<% end %>
-
