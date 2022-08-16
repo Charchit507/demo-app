@@ -1,23 +1,23 @@
 <div class="col">
   <div class="row justify-content-between">
-    <h1 style="text-shadow: 2px 2px 4px #000000" class="col-2">ARTICLES</h1>
+    <h1 class="col-2 shadow-class">ARTICLES</h1>
     <%= link_to 'New article', new_article_path, class: "col-2 btn btn-success btn-lg shadow" %>
   </div>
   <br>
   <table class="table table-striped table-hover shadow">
     <tr class="shadow table-dark">
-      <th style="padding:1.5rem;text-align:center;">Title</th>
-      <th style="text-align:center;padding:1.5rem;">Text</th>
-      <th style="padding: 1.5rem;text-align: center;" colspan="3">Actions</th>
+      <th class="table-class">Title</th>
+      <th class="table-class">Text</th>
+      <th class="table-class" colspan="3">Actions</th>
     </tr>
 
     <% @articles.each do |article| %>
       <tr>
-        <td style="padding: 1.5rem;text-align:center;"><%= article.title %></td>
-        <td style="padding: 1.5rem;text-align:center;"><%= article.text %></td>
-        <td style="text-align:center;padding: 1.5rem;"><%= link_to 'Show', article_path(article), style: "text-decoration:none" %></td>
-        <td style="text-align:center;padding: 1.5rem"><%= link_to 'Edit', edit_article_path(article), style: "text-decoration:none" %></td>
-        <td style="text-align:center;padding: 1.5rem;"><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you  sure?' }, style: "text-decoration:none;color:red;" %></td>
+        <td class="table-class"><%= article.title %></td>
+        <td class="table-class"><%= article.text %></td>
+        <td class="table-class"><%= link_to 'Show', article_path(article), class: "link-class" %></td>
+        <td class="table-class"><%= link_to 'Edit', edit_article_path(article), class: "link-class" %></td>
+        <td class="table-class"><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you  sure?' }, class: "link-class destroy-class" %></td>
       </tr>
     <% end %>
   </table>

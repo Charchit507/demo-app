@@ -1,5 +1,5 @@
 <div class="col">
-  <h2 style="text-align:center">Forgot your password?</h2>
+  <h2 class="align-class">Forgot your password?</h2>
   <br>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
