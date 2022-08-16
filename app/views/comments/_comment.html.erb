@@ -7,5 +7,7 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
-
-<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<br>
+<br>

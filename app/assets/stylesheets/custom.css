@@ -1,0 +1,39 @@
+.align-class {
+  text-align: center;
+}
+
+.shadow-class {
+  text-shadow: 2px 2px 7px #000000;
+}
+
+.table-class {
+  padding: 1.5rem !important;
+  text-align: center;
+}
+
+.link-class {
+  text-decoration: none;
+}
+
+.destroy-class{
+  color: red;
+}
+
+.font-class {
+  font-size: 30px;
+}
+
+.header-class {
+  color: white;
+  text-decoration: none;
+}
+
+.notice-class {
+  color: green;
+  padding: 0rem;
+}
+
+.alert-class {
+  color: red;
+  padding: 0rem;
+}

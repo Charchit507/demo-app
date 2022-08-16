@@ -10,8 +10,13 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert" style="padding:0rem"><%= alert %></p>
-    <%= yield %>
+    <%= render "header_and_footer/header" %>
+    <div class="container">
+      <div class="row">
+        <p class="notice notice-class"><%= notice %></p>
+        <p class="alert alert-class"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

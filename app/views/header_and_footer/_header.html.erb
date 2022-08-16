@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Blog Application</a>
+        <div class="nav-link row justify-content-end">
+          <% if user_signed_in? %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "header-class" %>
+          <% else %>
+            <%= link_to 'Sign in', new_user_session_path, class: "header-class" %>
+          <% end %>
+        </div>
+  </div>
+</nav>

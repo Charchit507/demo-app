@@ -14,18 +14,18 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <p class="mb-3">
+    <%= form.label :title, class: "form-label" %><br>
+    <%= form.text_field :title, class: "form-control" %>
   </p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+  <p class="mb-3">
+    <%= form.label :text, class: "form-label" %><br>
+    <%= form.text_area :text, class: "form-control" %>
   </p>
-
+  <br>
   <p>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success btn-lg shadow" %>
   </p>
 
 <% end %>
