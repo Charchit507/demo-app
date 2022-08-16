@@ -1,5 +1,8 @@
-<h1>Edit your Article</h1>
+<div class="col-8 mx-auto">
+  <h1 style="text-align:center;text-shadow: 2px 2px 7px #000000">Edit your Article</h1>
+  <br>
+  <br>
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+  <%= link_to 'Back', articles_path, class: "btn btn-secondary shadow" %>
+</div>

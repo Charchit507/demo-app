@@ -1,18 +1,26 @@
-<p>
-  <strong>Title : </strong>
-  <%= @article.title %>
-</p>
+<div class="col">
+  <p style="font-size: 30px;">
+    <strong>Title : </strong>
+    <%= @article.title %>
+  </p>
 
-<p>
-  <strong>Text : </strong>
-  <%= @article.text %>
-</p>
-
-<%= link_to 'Edit', edit_article_path %>
-<%= link_to 'Back', articles_path %>
-
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <p style="font-size: 30px;">
+    <strong>Text : </strong>
+    <%= @article.text %>
+  </p>
+  <div class="d-grid gap-2 d-md-flex justify-content-end">
+    <%= link_to 'Edit', edit_article_path, class: "btn btn-primary shadow" %>
+    <%= link_to 'Back', articles_path, class: "btn btn-secondary shadow" %>
+  </div>
+  <br>
+  <hr>
+  <h4>Comments</h4>
+  <br>
+  <%= render @article.comments %>
+  <br>
+  <hr>
+  <br>
+  <h4>Add a comment:</h3>
+  <br>
+  <%= render 'comments/form' %>
+</div>
