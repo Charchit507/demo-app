@@ -15,17 +15,8 @@
   text-decoration: none;
 }
 
-.destroy-class{
-  color: red;
-}
-
 .font-class {
   font-size: 30px;
-}
-
-.header-class {
-  color: white;
-  text-decoration: none;
 }
 
 .notice-class {
@@ -35,5 +26,5 @@
 
 .alert-class {
   color: red;
-  padding: 0rem;
+  padding: 0rem !important;
 }
