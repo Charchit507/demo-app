@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+100.times do |i|
+  puts "creating student #{i+1}"
+  Article.create(
+    title: "This is #{i+1} Article",
+    text: "Hey I am #{i+1} text"
+  )
+end
