@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="/">Blog Application</a>
         <div class="nav-link row justify-content-end">
           <% if user_signed_in? %>
-            <span class="link-light link-class"><%= current_user.name %></span>
+            <span class="link-light link-class"><%= current_user.name ? current_user.name : current_user.full_name %></span>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "link-light link-class" %>
           <% else %>
             <%= link_to 'Sign in', new_user_session_path, class: "link-light link-class" %>
