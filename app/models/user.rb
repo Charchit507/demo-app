@@ -8,15 +8,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_omniauth(access_token)
-    user = User.where(email: access_token.info.email).first
+    user = User.find_by(email: access_token.info.email)
     unless user
       user = User.create(
         email: access_token.info.email,
         password: Devise.friendly_token[0,20]
       )
     end
-    user.name = access_token.info.name
-    user.image = access_token.info.image
+    user.first_name = access_token.info.first_name
+    user.last_name = access_token.info.last_name
     user.uid = access_token.uid
     user.provider = access_token.provider
     user.save
