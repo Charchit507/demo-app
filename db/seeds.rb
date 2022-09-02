@@ -7,10 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-100.times do |i|
-  puts "creating student #{i+1}"
-  Article.create(
-    title: "This is #{i+1} Article",
-    text: "Hey I am #{i+1} text"
-  )
+[].tap do |array|
+  100.times do |i|
+    created_at = Time.current
+
+    array << {
+      title: "This is #{i+1} Article",
+      text: "Hello This is #{i+1} Text",
+      created_at: created_at,
+      updated_at: created_at
+    }
+  end
+
+  result = Article.insert_all array
+  puts result.inspect
 end
