@@ -17,8 +17,8 @@ class User < ApplicationRecord
     end
     user.first_name = access_token.info.first_name
     user.last_name = access_token.info.last_name
-    user.uid = access_token.uid
-    user.provider = access_token.provider
+    # user.uid = access_token.uid
+    # user.provider = access_token.provider
     user.save
 
     user
