@@ -7,6 +7,10 @@
   <%= comment.body %>
 </p>
 <br>
-<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+<% if current_user && current_user == comment.user %>
+  <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <hr>
+<% end %>
 <br>
 <br>
