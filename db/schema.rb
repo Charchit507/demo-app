@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_08_19_064210) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
   end
 
   create_table "comments", force: :cascade do |t|

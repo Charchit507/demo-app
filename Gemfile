@@ -57,8 +57,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
-gem 'omniauth-rails_csrf_protection'
+# gem 'omniauth-rails_csrf_protection'
 
 gem 'kaminari'
 
+# gem 'omniauth-google-oauth2'
+
+gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-google-oauth2'
