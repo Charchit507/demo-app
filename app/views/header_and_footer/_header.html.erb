@@ -4,19 +4,14 @@
       <a class="navbar-brand" href="/">Blog Application</a>
       <div class="nav-link row justify-content-end">
       </div>
-      <div class="nav-link row justify-content-end dropdown">
-        <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><span class="link-dark link-class"><%= current_user.full_name %></span></a>
-        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-          <li><%= link_to 'Edit User', edit_user_registration_path, class: "dropdown-item"%></li>
-          <li><hr class="dropdown-divider"></li>
-          <li>
-            <% if user_signed_in? %>
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            <% else %>
-              <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
-            <% end %>
-          </li>
-        </ul>
+      <div class="nav-link row justify-content-end">
+        <span class="link-light"><%= current_user.full_name %></span>
+          <span>
+            <%= link_to 'Edit User', edit_user_registration_path, class: "btn btn-outline-light"%>
+          </span>
+          <span>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light" %>
+          </span>
       </div>
     </div>
   </nav>
