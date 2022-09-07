@@ -5,6 +5,9 @@
       <div class="nav-link row justify-content-end">
       </div>
       <div class="nav-link row justify-content-end">
+        <% if current_user.avatar.attached? %>
+          <span><%= image_tag current_user.avatar, width: "40px", style: "border-radius: 50px;border: 1px solid white", class: "shadow" %></span>
+        <% end %>
         <span class="link-light"><%= current_user.full_name %></span>
           <span>
             <%= link_to 'Edit User', edit_user_registration_path, class: "btn btn-outline-light"%>
