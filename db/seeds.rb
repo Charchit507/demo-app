@@ -6,41 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-# [].tap do |array|
-#   100.times do |i|
-#     created_at = Time.current
-
-#     array << {
-#       title: "This is #{i+1} Article",
-#       text: "Hello This is #{i+1} Text",
-#       created_at: created_at,
-#       updated_at: created_at
-#     }
-#   end
-
-#   result = Article.insert_all array
-#   puts result.inspect
-
-# 4.times do |i|
-#   created_at = Time.current
-#   result = Article.insert_all(
-#     [
-#       {
-#         title: "This is #{i+1} Article hai",
-#         text: "This is #{i+1} Text",
-#         created_at: created_at,
-#         updated_at: created_at
-#       }
-#     ]
-#   )
-# end
-
-# puts result.inspect
-
-# puts Article.count
-
-result = Article.insert_all(
+Article.create(
   [
     {"title":"Geological Engineer","text":"orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris"},
     {"title":"Registered Nurse","text":"vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere"},

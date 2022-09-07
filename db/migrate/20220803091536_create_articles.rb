@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :text
 
-      t.timestamps default: -> { 'CURRENT_TIMESTAMP' }
+      t.timestamps
     end
   end
 end

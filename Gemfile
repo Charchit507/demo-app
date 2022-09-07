@@ -7,8 +7,6 @@ gem 'pg', '~> 1.4', '>= 1.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5', '>= 6.0.5.1'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -57,11 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
-# gem 'omniauth-rails_csrf_protection'
-
 gem 'kaminari'
 
-# gem 'omniauth-google-oauth2'
-
 gem 'omniauth', '~> 1.9.1'
+
 gem 'omniauth-google-oauth2'
