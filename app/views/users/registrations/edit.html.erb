@@ -5,6 +5,10 @@
     <br>
     <br>
     <div class="field col-6 mx-auto align-class"><%= image_tag current_user.avatar, width: "200px", style: "border-radius: 30px;border: 3px solid black" %></div>
+    <br>
+  <% elsif user_signed_in? %>
+    <br>
+    <div class="field col-6 mx-auto align-class"><%= image_tag current_user.image, width: "200px", style: "border-radius: 30px;border: 3px solid black" if current_user.image? %></div>
   <% end %>
   <br>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
