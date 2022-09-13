@@ -12,11 +12,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_omniauth(access_token)
+    pass = Devise.friendly_token[0,20]
+    Rails.logger.debug ">>>password:- #{pass}"
     user = User.find_by(email: access_token.info.email)
     unless user
       user = User.create(
         email: access_token.info.email,
-        password: Devise.friendly_token[0,20]
+        password: pass,
       )
     end
     user.first_name = access_token.info.first_name
