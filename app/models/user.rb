@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :send_welcome_mail
+
   has_many :comments, dependent: :destroy
 
   has_one_attached :avatar
@@ -7,11 +9,7 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
-  after_create :send_welcome_mail
 
-  def send_welcome_mail
-    UserMailer.with(user: self).welcome_email.deliver_now
-  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -23,7 +21,7 @@ class User < ApplicationRecord
     unless user
       user = User.create(
         email: access_token.info.email,
-        password: Devise.friendly_token[0,20],
+        password: Devise.friendly_token[0,20]
       )
     end
     user.first_name = access_token.info.first_name
@@ -34,5 +32,11 @@ class User < ApplicationRecord
     user.save
 
     user
+  end
+
+  private
+
+  def send_welcome_mail
+    UserMailer.with(user: self).welcome_email.deliver_now
   end
 end
