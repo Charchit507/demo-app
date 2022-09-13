@@ -18,7 +18,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      ArticleMailer.with(user: current_user).create_mail(@article).deliver_now
       redirect_to @article
     else
       render 'new'
@@ -27,7 +26,6 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      ArticleMailer.with(user: current_user).update_mail(@article).deliver_now
       redirect_to @article
     else
       render 'edit'
@@ -36,7 +34,6 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    ArticleMailer.with(user: current_user).delete_mail(@article).deliver_now
 
     redirect_to articles_path, notice: "Article was successfully destroyed."
   end
