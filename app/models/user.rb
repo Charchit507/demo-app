@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :send_welcome_mail
+
   has_many :comments, dependent: :destroy
 
   has_one_attached :avatar
@@ -6,6 +8,9 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -27,5 +32,11 @@ class User < ApplicationRecord
     user.save
 
     user
+  end
+
+  private
+
+  def send_welcome_mail
+    UserMailer.with(user: self).welcome_email.deliver_now
   end
 end
