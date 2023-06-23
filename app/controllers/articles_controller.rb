@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:show, :edit, :update, :destroy]
   def index
     @articles = Article.all.page params[:page]
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.page params[:page]
   end
 
   def show
