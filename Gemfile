@@ -64,3 +64,5 @@ gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-google-oauth2'
 
 gem 'ransack'
+
+gem "administrate"
